@@ -26,6 +26,7 @@ const Card: React.FC<ICard> = ({
             shadowOffset: {width: 0, height: elevation},
             borderRadius: cornerRadius,
             backgroundColor: backgroundColor,
+            flex: 1,
           },
         })
       : StyleSheet.create({
@@ -33,6 +34,7 @@ const Card: React.FC<ICard> = ({
             elevation: elevation,
             borderRadius: cornerRadius,
             backgroundColor: backgroundColor,
+            flex: 1,
           },
         });
 
