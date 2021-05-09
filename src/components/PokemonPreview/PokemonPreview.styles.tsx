@@ -11,7 +11,7 @@ export const Avatar = styled.Image`
   height: 75px;
 `;
 
-export const Name = styled.Text`
+export const PokeName = styled.Text`
   font-size: 16px;
   text-align: center;
   text-transform: capitalize;
@@ -19,9 +19,10 @@ export const Name = styled.Text`
   color: ${({theme}) => theme.colors.gray14};
 `;
 
-export const Type = styled.Text`
+export const PokeType = styled.Text`
   font-size: 14px;
   color: ${({theme}) => theme.colors.mediumGray};
+  text-align: center;
 `;
 
 export const StyledCard = styled(Card)`
