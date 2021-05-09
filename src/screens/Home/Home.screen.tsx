@@ -1,10 +1,19 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, ListRenderItem, Text, View} from 'react-native';
 import {API_URL} from 'react-native-dotenv';
 import styled from 'styled-components/native';
 import useSWR from 'swr';
 import {PokemonPreview} from '../../components/PokemonPreview/PokemonPreview.component';
 import {PokemonPreviewPlaceholder} from '../../components/PokemonPreviewPlaceholder/PokemonPreviewPlaceholder.component';
+
+interface PokeName {
+  name: string;
+}
+
+interface IPokeDetailsData {
+  results: PokeName[];
+}
 
 const StyledFlatList = styled.FlatList.attrs({
   contentContainerStyle: {paddingBottom: 10},
@@ -13,8 +22,11 @@ const StyledFlatList = styled.FlatList.attrs({
 
 export default function Home() {
   const [offset, setOffset] = useState(0);
-  const [pokeList, setPokeList] = useState([] as any);
-  const {data, mutate} = useSWR(`${API_URL}?limit=10&offset=${offset}`);
+  const [pokeList, setPokeList] = useState<PokeName[]>([]);
+  const {data, mutate} = useSWR<IPokeDetailsData>(
+    `${API_URL}?limit=10&offset=${offset}`,
+  );
+  const {navigate} = useNavigation();
 
   const onEndReachedCallback = () => {
     if (data) {
@@ -25,15 +37,20 @@ export default function Home() {
 
   const pokeArray = data ? [...pokeList, ...data.results] : pokeList;
 
+  const renderPokemonRows: ListRenderItem<PokeName> = ({item}) => (
+    <PokemonPreview
+      name={item?.name}
+      onPress={() => navigate('PokeDetails', {name: item.name})}
+    />
+  );
+
   return (
     <View>
-      <StyledFlatList
+      <StyledFlatList<React.ElementType>
         data={pokeArray}
         numColumns={2}
-        renderItem={({item}) => (
-          <PokemonPreview name={item?.name} onPress={() => {}} />
-        )}
-        keyExtractor={poke => poke?.name}
+        renderItem={renderPokemonRows}
+        keyExtractor={(item: {name: PokeName}) => item?.name}
         onEndReached={onEndReachedCallback}
         onEndReachedThreshold={0.01}
         ListEmptyComponent={() =>
@@ -46,7 +63,7 @@ export default function Home() {
                 title="recarregar"
                 onPress={() => {
                   setOffset(0);
-                  mutate(0);
+                  mutate({results: [{name: ''}]});
                 }}
               />
             </>
