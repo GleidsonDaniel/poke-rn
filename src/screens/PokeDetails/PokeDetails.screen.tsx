@@ -18,7 +18,6 @@ type IPokeDetailsParams = {
     name: string;
   };
 };
-
 interface IPokeDetailsData {
   name: string;
   abilities: [{ability: {name: string}}];
