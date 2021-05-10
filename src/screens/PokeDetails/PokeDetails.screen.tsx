@@ -44,12 +44,14 @@ export default function PokeDetails() {
   return (
     <Container>
       <PokeDetailsAvatar source={{uri: data?.sprites.front_default}} />
-      <PokeName>{data?.name}</PokeName>
-      <PokeType>
+      <PokeName testID={`poke_details_name_${data?.name}`}>
+        {data?.name}
+      </PokeName>
+      <PokeType testID={`poke_details_types_${data?.name}`}>
         {data?.types.map(poke => poke.type.name).join(', ') || ''}
       </PokeType>
       <AbilitiesLabel>Abilities</AbilitiesLabel>
-      <PokeType>
+      <PokeType testID={`poke_details_abilities_${data?.name}`}>
         {data?.abilities.map(poke => poke.ability.name).join(', ') || ''}
       </PokeType>
     </Container>

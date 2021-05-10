@@ -35,9 +35,11 @@ export const PokemonPreview = ({name, ...props}: IPokemonPreview) => {
 
   return (
     <StyledCard>
-      <Container {...props}>
+      <Container {...props} testID={`poke_preview_touchable_${data.name}`}>
         <Avatar source={{uri: data.sprites.front_default}} resizeMode="cover" />
-        <PokeName>{data?.name || ''}</PokeName>
+        <PokeName testID={`poke_preview_name_${data.name}`}>
+          {data?.name || ''}
+        </PokeName>
         <PokeType>
           {data?.types.map(poke => poke.type.name).join(', ') || ''}
         </PokeType>

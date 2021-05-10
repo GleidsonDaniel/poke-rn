@@ -45,8 +45,9 @@ export default function Home() {
   );
 
   return (
-    <View>
+    <View testID="home_screen">
       <StyledFlatList<React.ElementType>
+        testID="home_flatlist"
         data={pokeArray}
         numColumns={2}
         renderItem={renderPokemonRows}
@@ -60,6 +61,7 @@ export default function Home() {
                 Não há pokemons disponíveis, tente recarregar novamente.
               </Text>
               <Button
+                testID="empty_list_button"
                 title="recarregar"
                 onPress={() => {
                   setOffset(0);
