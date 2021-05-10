@@ -54,7 +54,7 @@ export default function Home() {
         onEndReached={onEndReachedCallback}
         onEndReachedThreshold={0.01}
         ListEmptyComponent={() =>
-          !pokeArray.length ? (
+          !pokeArray.length && data ? (
             <>
               <Text>
                 Não há pokemons disponíveis, tente recarregar novamente.
