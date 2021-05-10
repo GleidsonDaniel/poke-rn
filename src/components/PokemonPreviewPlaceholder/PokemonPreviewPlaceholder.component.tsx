@@ -6,8 +6,9 @@ export const PokemonPreviewPlaceholder = () => {
   const {width} = Dimensions.get('screen');
   return (
     <SkeletonPlaceholder>
-      {[...Array(3).keys()].map(() => (
+      {[...Array(3).keys()].map((x, i) => (
         <SkeletonPlaceholder.Item
+          key={i.toString()}
           flexDirection="row"
           alignItems="center"
           padding={10}
