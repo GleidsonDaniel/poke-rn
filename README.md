@@ -1,4 +1,3 @@
-
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -11,10 +10,10 @@
   <h3 align="center">poke-rn</h3>
 </p>
 
-
 <br />
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 Repository made to show my knowledge of react native.
@@ -53,6 +52,14 @@ $ npx pod-install
 
 ## 🛠 Testing
 
+live preview:
+
+<a href="https://gfycat.com/complexlivelygull">
+    <img src="https://thumbs.gfycat.com/ComplexLivelyGull-size_restricted.gif" alt="LivePreview" >
+</a>
+
+<br />
+
 Generate first the apk to test:
 
 ```
@@ -89,6 +96,7 @@ Remember to generate a device with the same configuration of the device on the .
 <br />
 
 <!-- CONTACT -->
+
 ## Contact
 
 [Daniel Silva](https://www.linkedin.com/in/gleidson10daniel/) - gleidson10daniel@gmail.com
@@ -96,12 +104,14 @@ Remember to generate a device with the same configuration of the device on the .
 [https://github.com/GleidsonDaniel](https://github.com/GleidsonDaniel)
 
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
