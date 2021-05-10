@@ -23,6 +23,8 @@ There is not much to talk about the technologies used, given that they are the m
 
 ## 📦 Getting started
 
+This project assumes that you have knowledge of react native and have all the necessary dependencies to run the project, if you have not configured it, follow the [official documentation](https://reactnative.dev/docs/environment-setup), there are a multitude of configurations and variables and the documentation is always up to date.
+
 Installing Dependencies:
 
 ```sh
